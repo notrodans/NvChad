@@ -93,7 +93,7 @@ return {
         "windwp/nvim-autopairs",
         opts = {
           fast_wrap = {},
-          disable_filetype = { "TelescopePrompt", "vim" },
+          disable_filetype = { "vim" },
         },
         config = function(_, opts)
           require("nvim-autopairs").setup(opts)
@@ -115,15 +115,6 @@ return {
     },
     opts = function()
       return require "nvchad.configs.cmp"
-    end,
-  },
-
-  {
-    "nvim-telescope/telescope.nvim",
-    dependencies = { "nvim-treesitter/nvim-treesitter" },
-    cmd = "Telescope",
-    opts = function()
-      return require "nvchad.configs.telescope"
     end,
   },
 
