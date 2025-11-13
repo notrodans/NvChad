@@ -15,8 +15,6 @@ M.on_attach = function(_, bufnr)
   map("n", "<leader>wl", function()
     print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
   end, opts "List workspace folders")
-
-  map("n", "<leader>D", vim.lsp.buf.type_definition, opts "Go to type definition")
 end
 
 -- disable semanticTokens
