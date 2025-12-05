@@ -20,41 +20,6 @@ return {
   "nvzone/menu",
   { "nvzone/minty", cmd = { "Huefy", "Shades" } },
 
-  {
-    "nvim-tree/nvim-web-devicons",
-    opts = function()
-      dofile(vim.g.base46_cache .. "devicons")
-      return { override = require "nvchad.icons.devicons" }
-    end,
-  },
-
-  {
-    "folke/which-key.nvim",
-    keys = { "<leader>", "<c-w>", '"', "'", "`", "c", "v", "g" },
-    cmd = "WhichKey",
-    opts = function()
-      dofile(vim.g.base46_cache .. "whichkey")
-      return {}
-    end,
-  },
-
-  -- formatting!
-  {
-    "stevearc/conform.nvim",
-    opts = {
-      formatters_by_ft = { lua = { "stylua" } },
-    },
-  },
-
-  -- git stuff
-  {
-    "lewis6991/gitsigns.nvim",
-    event = "User FilePost",
-    opts = function()
-      return require "nvchad.configs.gitsigns"
-    end,
-  },
-
   -- lsp stuff
   {
     "mason-org/mason.nvim",
