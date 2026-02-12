@@ -85,18 +85,11 @@ return {
 
   {
     "nvim-treesitter/nvim-treesitter",
-    lazy = true,
-    event = { "BufReadPre", "BufNewFile" },
+    event = { "BufReadPost", "BufNewFile" },
     cmd = { "TSInstall", "TSBufEnable", "TSBufDisable", "TSModuleInfo" },
-    dependencies = {
-      "nvim-treesitter/nvim-treesitter-textobjects",
-    },
-    build = ":TSUpdate",
+    build = ":TSUpdate | TSInstallAll",
     opts = function()
       return require "nvchad.configs.treesitter"
-    end,
-    config = function(_, opts)
-      require("nvim-treesitter.configs").setup(opts)
     end,
   },
 }
