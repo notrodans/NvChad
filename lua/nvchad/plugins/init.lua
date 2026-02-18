@@ -43,11 +43,13 @@ return {
   },
 
   {
+    import = "nvchad.blink.lazyspec",
+  },
+
+  {
     "saghen/blink.cmp",
     lazy = false,
-    version = "v0.*",
     dependencies = "rafamadriz/friendly-snippets",
-
     opts = {
       keymap = {
         preset = "enter",
@@ -97,6 +99,4 @@ return {
       return require "nvchad.configs.treesitter"
     end,
   },
-
-  require "nvchad.plugins.blink",
 }
