@@ -38,59 +38,6 @@ return {
   },
 
   {
-    "hrsh7th/nvim-cmp",
-    enabled = false,
-  },
-
-  {
-    import = "nvchad.blink.lazyspec",
-  },
-
-  {
-    "saghen/blink.cmp",
-    lazy = false,
-    dependencies = "rafamadriz/friendly-snippets",
-    opts = {
-      keymap = {
-        preset = "enter",
-        ["<C-p>"] = { "select_prev", "fallback" },
-        ["<C-n>"] = { "select_next", "fallback" },
-        ["<C-d>"] = { "scroll_documentation_up", "fallback" },
-        ["<C-f>"] = { "scroll_documentation_down", "fallback" },
-        ["<C-space>"] = { "show", "show_documentation", "hide_documentation" },
-        ["<C-e>"] = { "hide", "fallback" },
-
-        ["<Tab>"] = {
-          function(cmp)
-            if cmp.snippet_active() then
-              return cmp.accept()
-            else
-              return cmp.select_next()
-            end
-          end,
-          "snippet_forward",
-          "fallback",
-        },
-        ["<S-Tab>"] = { "snippet_backward", "select_prev", "fallback" },
-      },
-
-      appearance = {
-        use_nvim_cmp_as_default = true,
-        nerd_font_variant = "mono",
-      },
-
-      snippets = {
-        preset = "luasnip",
-      },
-
-      sources = {
-        default = { "lsp", "path", "snippets", "buffer" },
-      },
-    },
-    opts_extend = { "sources.default" },
-  },
-
-  {
     "nvim-treesitter/nvim-treesitter",
     event = { "BufReadPost", "BufNewFile" },
     cmd = { "TSInstall", "TSBufEnable", "TSBufDisable", "TSModuleInfo" },
